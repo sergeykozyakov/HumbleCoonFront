@@ -1,0 +1,23 @@
+{
+  "name": "humble-coon",
+  "version": "1.0.0",
+  "description": "Humble Coon client side",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeykozyakov/HumbleCoonFront.git"
+  },
+  "keywords": [
+    "humble",
+    "coon"
+  ],
+  "author": "Sergey Kozyakov",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/sergeykozyakov/HumbleCoonFront/issues"
+  },
+  "homepage": "https://github.com/sergeykozyakov/HumbleCoonFront#readme"
+}
