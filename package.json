@@ -4,7 +4,10 @@
   "description": "Humble Coon client side",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --mode development",
     "build": "webpack -p",
+    "lint": "eslint src/**/*.js* --fix",
+    "prettier": "prettier --write src/**/*.js*",
     "test": "jest"
   },
   "repository": {
@@ -21,6 +24,17 @@
     "url": "https://github.com/sergeykozyakov/HumbleCoonFront/issues"
   },
   "homepage": "https://github.com/sergeykozyakov/HumbleCoonFront#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(js|jsx)": [
+      "npm run lint",
+      "git add"
+    ]
+  },
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -28,22 +42,26 @@
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
-    "babel-eslint": "^10.1.0",
+    "@babel/preset-react": "^7.10.4",
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.3",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-cli": "^26.1.0",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
