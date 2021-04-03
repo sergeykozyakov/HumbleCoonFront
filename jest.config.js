@@ -3,7 +3,7 @@ module.exports = {
 
   coverageReporters: ['text', 'lcov'],
 
-  moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
   rootDir: './',
 
@@ -11,9 +11,9 @@ module.exports = {
 
   testEnvironment: 'jsdom',
 
-  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
 
-  transform: { '^.+\\.[jt]sx?$': 'babel-jest' },
+  transform: { '^.+\\.jsx?$': 'babel-jest', '^.+\\.tsx?$': 'ts-jest' },
 
   verbose: true,
 };
