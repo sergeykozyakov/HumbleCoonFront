@@ -5,10 +5,14 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack/config.dev.js",
     "build": "webpack --config webpack/config.prod.js",
-    "server": "node scripts/server.js",
+    "server": "node server/server.js dev",
     "lint": "eslint src/**/*.[jt]s* tests/**/*.[jt]s* --fix",
     "test": "jest",
     "test:coverage": "jest --coverage"
+  },
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
   },
   "repository": {
     "type": "git",
@@ -41,8 +45,7 @@
   ],
   "dependencies": {
     "@material-ui/core": "4.11.3",
-    "core-js": "3.10.0",
-    "express": "4.17.1",
+    "@material-ui/icons": "4.11.2",
     "react": "16.14.0",
     "react-dom": "16.14.0"
   },
@@ -60,6 +63,7 @@
     "babel-eslint": "10.1.0",
     "babel-jest": "26.1.0",
     "babel-loader": "8.1.0",
+    "core-js": "3.10.0",
     "eslint": "7.5.0",
     "eslint-config-airbnb": "18.2.0",
     "eslint-plugin-import": "2.22.0",
@@ -67,6 +71,8 @@
     "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-react": "7.20.5",
     "eslint-plugin-react-hooks": "4.0.8",
+    "express": "4.17.1",
+    "express-http-proxy": "1.6.2",
     "fork-ts-checker-webpack-plugin": "6.2.0",
     "html-webpack-plugin": "4.5.2",
     "husky": "4.2.5",
