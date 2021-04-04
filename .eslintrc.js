@@ -1,0 +1,37 @@
+module.exports = {
+  env: {
+    browser: true,
+    jest: true,
+    node: true,
+  },
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:jest/recommended',
+    'airbnb',
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: [
+    '@typescript-eslint',
+    'import',
+    'jest',
+    'jsx-a11y',
+    'react',
+    'react-hooks',
+  ],
+  rules: {
+    'no-undef': 'off',
+    'no-shadow': 'off',
+    'no-unused-vars': 'off',
+    'no-mixed-operators': 'off',
+    'no-use-before-define': 'off',
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/destructuring-assignment': 'off',
+    'react/require-default-props': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+  },
+};
