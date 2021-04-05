@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import 'fontsource-roboto';
+
+import { hot } from 'react-hot-loader/root';
+
 import Hello from './modules/hello/index';
 
-ReactDOM.render(<Hello />, document.getElementById('app'));
+const HelloApp = hot(Hello);
+
+ReactDOM.render(<HelloApp />, document.getElementById('app'));

@@ -1,5 +1,7 @@
 const path = require('path');
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
@@ -13,6 +15,27 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'images/[hash].[ext]',
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[hash].[ext]',
+        },
+      },
       { test: /\.[jt]sx?$/, exclude: /node_modules/, loader: 'babel-loader' },
     ],
   },
@@ -20,6 +43,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
     }),
