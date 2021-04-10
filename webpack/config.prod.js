@@ -34,6 +34,6 @@ module.exports = merge(common, {
       ],
     }),
     new ForkTsCheckerWebpackPlugin(),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
 });
