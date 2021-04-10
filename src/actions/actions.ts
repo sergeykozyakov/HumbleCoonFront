@@ -5,17 +5,24 @@ export const apiPost = <T>(
   data: Record<string, any> = {},
   onSuccess: (data: T) => void,
   onError: (errorText: string) => void,
+  isJsonRequest: boolean = true,
 ): void => {
-  const params: string[] = Object.keys(data);
+  let body = '';
 
-  const body: string = params.map((param: string): string => (
-    `${encodeURIComponent(param)}=${encodeURIComponent(data[param])}`
-  )).join('&');
+  if (isJsonRequest) {
+    body = JSON.stringify(data);
+  } else {
+    const params: string[] = Object.keys(data);
+
+    body = params.map((param: string): string => (
+      `${encodeURIComponent(param)}=${encodeURIComponent(data[param])}`
+    )).join('&');
+  }
 
   fetch(`${API_URL}${url}`, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': isJsonRequest ? 'application/json' : 'application/x-www-form-urlencoded',
     },
     body,
   })
