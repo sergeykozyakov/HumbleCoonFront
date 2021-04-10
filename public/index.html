@@ -9,5 +9,10 @@
   </head>
   <body>
     <div id="app"></div>
+    <% if (htmlWebpackPlugin.options.isProduction) { %>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="material-ui.js"></script>
+    <% } %>
   </body>
 </html>
