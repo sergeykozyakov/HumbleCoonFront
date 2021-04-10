@@ -7,7 +7,10 @@ export const apiPost = <T>(
   onError: (errorText: string) => void,
 ): void => {
   const params: string[] = Object.keys(data);
-  const body: string = params.map((param: string): string => `${param}=${data[param]}`).join('&');
+
+  const body: string = params.map((param: string): string => (
+    `${encodeURIComponent(param)}=${encodeURIComponent(data[param])}`
+  )).join('&');
 
   fetch(`${API_URL}${url}`, {
     method: 'POST',
