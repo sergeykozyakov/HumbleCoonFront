@@ -9,8 +9,10 @@ interface IProps {
   isCircular: boolean;
 }
 
-export default (props: IProps): JSX.Element => (
-  props.isCircular
+const Loader: React.FC<IProps> = ({ isCircular }) => (
+  isCircular
     ? <CircularProgress color="secondary" />
     : <LinearProgress color="secondary" />
 );
+
+export default Loader;
