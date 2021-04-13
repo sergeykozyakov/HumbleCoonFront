@@ -6,10 +6,9 @@ import {
   TextField,
   Button,
   Theme,
-  StyleRules,
 } from '@material-ui/core';
 
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { apiPost } from '../../actions/actions';
 
@@ -20,21 +19,19 @@ import IHelloResponse from '../../interfaces/IHelloResponse';
 import Loader from '../../components/Loader';
 import StatusPanel from '../../components/StatusPanel';
 
-interface IProps {
-  classes: Record<string, string>;
-}
+interface IProps {}
 
-const styles = (theme: Theme): StyleRules<string, any> => ({
+const useStyles = makeStyles((theme: Theme) => ({
   root: {
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     margin: theme.spacing(2),
     padding: theme.spacing(2),
     color: '#ffffff',
   },
-});
+}));
 
-const Hello = (props: IProps): JSX.Element => {
-  const { classes = {} } = props;
+const Hello: React.FC<IProps> = props => {
+  const classes: Record<string, string> = useStyles(props);
 
   const [name, setName] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -109,4 +106,4 @@ const Hello = (props: IProps): JSX.Element => {
   );
 };
 
-export default withStyles(styles)(Hello);
+export default Hello;

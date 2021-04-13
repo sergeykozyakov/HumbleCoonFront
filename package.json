@@ -8,7 +8,8 @@
     "server": "node server/server.js dev",
     "lint": "eslint src/**/*.[jt]s* tests/**/*.[jt]s* --fix",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "test:update": "jest --updateSnapshot"
   },
   "engines": {
     "node": "12.x",
@@ -59,9 +60,11 @@
     "@babel/preset-env": "7.10.4",
     "@babel/preset-react": "7.10.4",
     "@babel/preset-typescript": "7.13.0",
+    "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/jest": "26.0.22",
     "@types/react": "16.14.5",
     "@types/react-dom": "16.9.12",
+    "@types/react-test-renderer": "16.9.5",
     "@typescript-eslint/eslint-plugin": "4.20.0",
     "@typescript-eslint/parser": "4.20.0",
     "babel-eslint": "10.1.0",
@@ -71,6 +74,8 @@
     "copy-webpack-plugin": "6.4.1",
     "core-js": "3.10.0",
     "css-loader": "5.2.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.6",
     "eslint": "7.5.0",
     "eslint-config-airbnb": "18.2.0",
     "eslint-plugin-import": "2.22.0",
@@ -86,6 +91,7 @@
     "jest-cli": "26.1.0",
     "lint-staged": "10.2.11",
     "react-hot-loader": "4.13.0",
+    "react-test-renderer": "16.14.0",
     "style-loader": "2.0.0",
     "ts-jest": "26.5.4",
     "typescript": "4.2.3",

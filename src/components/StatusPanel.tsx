@@ -2,12 +2,11 @@ import React from 'react';
 
 import {
   Typography,
-  StyleRules,
   Theme,
   Grid,
 } from '@material-ui/core';
 
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 import WarningIcon from '@material-ui/icons/Warning';
 import CheckIcon from '@material-ui/icons/Check';
@@ -15,18 +14,19 @@ import CheckIcon from '@material-ui/icons/Check';
 interface IProps {
   message: string;
   isError?: boolean;
-  classes: Record<string, string>;
 }
 
-const styles = (theme: Theme): StyleRules<string, any> => ({
+const useStyles = makeStyles((theme: Theme) => ({
   text: {
     paddingTop: theme.spacing(1),
     paddingLeft: theme.spacing(1),
   },
-});
+}));
 
-const StatusPanel = (props: IProps): JSX.Element => {
-  const { message, isError = false, classes = {} } = props;
+const StatusPanel: React.FC<IProps> = props => {
+  const { message, isError = false } = props;
+
+  const classes: Record<string, string> = useStyles(props);
 
   return (
     <Grid container>
@@ -47,4 +47,4 @@ const StatusPanel = (props: IProps): JSX.Element => {
   );
 };
 
-export default withStyles(styles)(StatusPanel);
+export default StatusPanel;
