@@ -86,7 +86,7 @@
     "file-loader": "6.2.0",
     "fork-ts-checker-webpack-plugin": "6.2.0",
     "html-webpack-plugin": "4.5.2",
-    "husky": "4.2.5",
+    "husky": "4.3.8",
     "jest": "26.1.0",
     "jest-cli": "26.1.0",
     "lint-staged": "10.2.11",
